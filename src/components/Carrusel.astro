@@ -5,19 +5,6 @@ import fondoCampo from "../images/fondoCampo.avif";
 import logo from "../images/logo.png";
 ---
 
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    ScrollReveal().reveal(".carruselReveal", {
-      reset: true,
-      scale: 0.85,
-      duration: 500, // Ajusta la duración de la animación en milisegundos
-      easing: "ease-in-out", // Ajusta el easing para suavizar el efecto
-      interval: 200, // Añade un pequeño retraso entre los elementos
-      delay: 300,
-    });
-  });
-</script>
-
 <div
   id="default-carousel"
   class="relative w-4/5 carruselReveal"
@@ -52,7 +39,7 @@ import logo from "../images/logo.png";
     <!-- Item 4 -->
     <div class="hidden duration-700 ease-in-out" data-carousel-item>
       <img
-        src="/docs/images/carousel/carousel-4.svg"
+        src={tractor.src}
         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         alt="..."
       />
@@ -60,7 +47,7 @@ import logo from "../images/logo.png";
     <!-- Item 5 -->
     <div class="hidden duration-700 ease-in-out" data-carousel-item>
       <img
-        src="/docs/images/carousel/carousel-5.svg"
+        src={tractor.src}
         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         alt="..."
       />
@@ -153,3 +140,17 @@ import logo from "../images/logo.png";
     </span>
   </button>
 </div>
+
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    ScrollReveal().reveal(".carruselReveal", {
+      reset: true,
+      scale: 0.85,
+      duration: 500, // Ajusta la duración de la animación en milisegundos
+      easing: "ease-in-out", // Ajusta el easing para suavizar el efecto
+      interval: 200, // Añade un pequeño retraso entre los elementos
+      delay: 300,
+    });
+  });
+</script>

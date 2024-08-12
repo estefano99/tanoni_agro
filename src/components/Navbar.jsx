@@ -22,14 +22,14 @@ const Navbar = () => {
     });
 
     sr.reveal(".navbarReveal", { delay: 200 });
-    sr.reveal(".logoReveal", {
-      reset:false,
-      duration: 2000,
-      rotate: {
-        x: 1,
-        y: 100,
-      },
-    });
+    // sr.reveal(".logoReveal", {
+    //   reset:false,
+    //   duration: 2000,
+    //   rotate: {
+    //     x: 1,
+    //     y: 100,
+    //   },
+    // });
   }, []);
 
   return (
@@ -128,7 +128,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img className="h-8 w-auto" src="logo.png" alt="Logo" />
+              <img className="h-8 w-auto" src={logo.src} alt="Logo" />
             </a>
             <button
               type="button"
