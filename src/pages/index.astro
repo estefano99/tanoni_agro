@@ -1,18 +1,46 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import '@/styles/globals.css'
+import Carrusel from "@/components/Carrusel.astro";
+import Layout from "../layouts/Layout.astro";
+import "@/styles/globals.css";
 ---
 
+<!-- Configura el script para que se ejecute en el cliente -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    ScrollReveal().reveal('.headline', {
+      reset: true, // Permite que la animación se repita al volver a entrar en el viewport
+      distance: '150px', // Ajusta la distancia del desplazamiento
+      duration: 2000, // Ajusta la duración de la animación en milisegundos
+      easing: 'ease-in-out', // Ajusta el easing para suavizar el efecto
+      origin: 'right', // Ajusta la dirección de origen de la animación
+      interval: 200, // Añade un pequeño retraso entre los elementos
+			delay: 300
+    });
+  });
+</script>
+
 <Layout title="Tanoni Agro">
-	<main>
-		<section class="h-[100svh] w-full bg-tractor-image bg-fixed bg-center bg-no-repeat bg-cover">
-			<div class="h-full w-4/5 flex mx-auto items-center">
-				<div class="md:w-1/2 flex flex-col gap-2">
-					<p class="text-xl text-white">Realizamos tareas de terceros</p>
-					<h1 class="text-white text-clamp-sm font-black">Apasionamos asdaasdasdahjsdjkashd</h1>
-					<p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, nemo! Inventore, officiis aliquam? Ipsa officiis quisquam, dolores culpa laboriosam tenetur hic reiciendis voluptatem, eius voluptate praesentium omnis officia maxime qui.</p>
-				</div>
-			</div>
-		</section>
-	</main>
+  <main>
+    <section
+      class="h-[100svh] w-full bg-tractor-image bg-fixed bg-center bg-no-repeat bg-cover"
+    >
+      <div class="h-full w-4/5 flex mx-auto items-center">
+        <div class="md:w-1/2 flex flex-col gap-2 headline">
+          <p class="text-xl text-white">Realizamos tareas de terceros</p>
+          <h1 class="text-white text-clamp-sm font-black">
+            Apasionamos asdaasdasdahjsdjkashd
+          </h1>
+          <p class="text-white">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, nemo!
+            Inventore, officiis aliquam? Ipsa officiis quisquam, dolores culpa
+            laboriosam tenetur hic reiciendis voluptatem, eius voluptate
+            praesentium omnis officia maxime qui.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="w-full h-[600px] flex justify-center items-center">
+      <Carrusel />
+    </section>
+  </main>
 </Layout>
