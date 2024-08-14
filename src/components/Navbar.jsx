@@ -22,11 +22,22 @@ const Navbar = () => {
     });
 
     sr.reveal(".navbarReveal", { delay: 200 });
+
+    const navbar = document.querySelector(".navbarReveal");
+    const path = window.location.pathname;
+
+    if (path !== "/") {
+      navbar.classList.add("sticky", "text-black");
+      navbar.classList.remove("fixed");
+    } else {
+      navbar.classList.add("text-white");
+    }
+
     // sr.reveal(".logoReveal", {
     //   reset:false,
     //   duration: 2000,
     //   rotate: {
-    //     x: 1,
+    //     x: 1,  
     //     y: 100,
     //   },
     // });
@@ -82,37 +93,37 @@ const Navbar = () => {
         <div className="hidden lg:flex lg:gap-x-12">
           <a
             href="#home"
-            className="text-md font-semibold leading-6 text-gray-900"
+            className="text-md font-semibold leading-6 "
           >
             Inicio
           </a>
           <a
             href="#services"
-            className="text-md font-semibold leading-6 text-gray-900"
+            className="text-md font-semibold leading-6 "
           >
             Servicios
           </a>
           <a
             href="\nosotros"
-            className="text-md font-semibold leading-6 text-gray-900"
+            className="text-md font-semibold leading-6 "
           >
             Nosotros
           </a>
           <a
             href="#what-we-do"
-            className="text-md font-semibold leading-6 text-gray-900"
+            className="text-md font-semibold leading-6 "
           >
             Qué hacemos
           </a>
           <a
             href="#contact"
-            className="text-md font-semibold leading-6 text-gray-900"
+            className="text-md font-semibold leading-6 "
           >
             Contacto
           </a>
           <button
             onClick={toggleLanguage}
-            className="text-md font-semibold leading-6 text-gray-900"
+            className="text-md font-semibold leading-6 "
           >
             {language}
           </button>

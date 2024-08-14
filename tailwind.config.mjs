@@ -14,7 +14,7 @@ export default {
         "clamp-xl": ["clamp(3rem, 6vw, 5rem)", "2"],
       },
       backgroundImage: {
-        "tractor-image": "url('/src/images/tractor1.avif')",
+        "negociaciones-image": "url('/src/images/negociaciones.jpg')",
       },
     },
   },

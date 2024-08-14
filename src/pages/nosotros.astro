@@ -1,10 +1,86 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import '@/styles/globals.css'
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import Mision from "../images/mision.jpg";
+import Empresa from "../images/empresa.jpg";
+import "@/styles/globals.css";
 ---
 
 <Layout title="Tanoni Agro">
-	<main>
-		<h2>Nosotros faceherito</h2>
-	</main>
+	<section class="flex flex-col gap-10 md:gap-0">
+  <article class="min-h-[500px] flex flex-col items-center md:flex-row gap-5 md:gap-0">
+    <div
+      class="w-full md:w-[60%] h-full flex flex-col md:items-center ml-5 md:ml-0"
+    >
+      <div class="w-[90%] md:w-[60%] flex flex-col gap-5">
+        <h2 class="text-2xl md:text-6xl font-semibold opacity-80">La empresa</h2>
+        <p>
+          <span class="font-bold">Tanoni Agro SRL</span> es una empresa familiar
+          enfocada en el corretaje de cereales, aceites, subproductos y servicios
+          relacionados en el mercado argentino. Desde nuestra fundación, nos hemos
+          comprometido a ofrecer soluciones integrales y personalizadas que satisfagan
+          las necesidades de nuestros clientes en un sector tan dinámico y desafiante
+          como el agropecuario. Los miembros de esta sociedad cuentan con una amplia
+          trayectoria y experiencia en el rubro agropecuario.
+        </p>
+      </div>
+    </div>
+    <div
+      class="w-full md:w-[40%] h-full flex items-center justify-center md:justify-start"
+    >
+      <Image src={Empresa} class="md:h-4/6 md:w-4/6" alt="La Empresa" />
+    </div>
+  </article>
+
+<!-- SEGUNDO ARTICLE -->
+ 
+  <article class="min-h-[500px] flex flex-col items-center justify-center md:flex-row gap-5 md:gap-0 bg-slate-100">
+    <div
+      class="w-full md:w-[60%] h-full flex flex-col items-end justify-center order-2 md:order-1"
+    >
+      <div class="w-full md:w-[80%] flex justify-center">
+        <Image src={Mision} class="md:h-[90%] md:w-[90%]" alt="Mision empresarial" />
+      </div>
+    </div>
+    <div
+      class="w-full md:w-[60%] h-full flex flex-col items-start justify-around ml-5 md:ml-0 order-1 md:order-2"
+    >
+		<div class="w-[90%] md:w-4/5 flex flex-col justify-center items-start gap-5">
+      <h2 class="text-xl md:text-4xl font-semibold opacity-80">
+        Nuestra Misión
+      </h2>
+      <p >
+        Especializarnos en <span class="font-bold">facilitar las transacciones comerciales entre
+        productores y compradores </span>, asegurando la máxima transparencia y eficacia
+        en cada operación. Ofrecer asesoramiento experto y servicios de gestión
+        de riesgos, optimización de la cadena de suministro y acceso a mercados
+        internacionales.
+      </p>
+		</div>
+    </div>
+  </article>
+
+	<!-- Tercer article -->
+
+	<article class="min-h-[500px] md:h-[500px] w-full flex flex-col md:flex-row justify-center items-center gap-5 bg-slate-50">
+		<div class="h-1/2 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Propósito</h5>
+			<p class="font-normal text-gray-700 dark:text-gray-400">Construir <span class="font-bold">relaciones a largo plazo</span> con nuestros clientes, basadas en la confianza y el 
+				compromiso mutuo. Nos enorgullece ser un socio estratégico para aquellos que buscan 
+				maximizar el valor de sus operaciones en el sector agroindustrial.
+			</p>
+		</div>
+			<div class="block h-1/2 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Valores</h5>
+			<p class="font-normal underline underline-offset-2 text-gray-700 dark:text-gray-400">Confiabilidad, transparencia, trayectoria familiar.</p>
+		</div>
+		<div class="block h-1/2 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Equipo</h5>
+			<p class="font-normal text-gray-700 dark:text-gray-400">Ponemos a disposición un <span class="font-bold">equipo de profesionales altamente capacitados</span>, con una amplia 
+				experiencia y conocimiento en el sector, lo que nos permite brindar un servicio eficiente, 
+				confiable y adaptado a las exigencias del mercado actual. 
+			</p>
+		</div>
+	</article>
+</section>
 </Layout>

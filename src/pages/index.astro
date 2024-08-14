@@ -10,9 +10,10 @@ import Hero from "@/components/Hero.astro";
 <Layout title="Tanoni Agro">
   <main>
     <section
-      class="h-[100svh] w-full bg-tractor-image bg-fixed bg-center bg-no-repeat bg-cover"
+      class="h-[100svh] relative w-full bg-negociaciones-image bg-fixed bg-center bg-no-repeat bg-cover"
     >
-      <div class="h-full w-4/5 flex mx-auto items-center">
+    <div class="absolute inset-0 bg-black/50 z-10"></div>
+      <div class="relative h-full w-4/5 flex mx-auto items-center z-20">
         <div class="md:w-1/2 flex flex-col gap-2 headline">
           <p class="text-xl text-white">Realizamos tareas de terceros</p>
           <h1 class="text-white text-clamp-sm font-black">
@@ -32,7 +33,6 @@ import Hero from "@/components/Hero.astro";
     </section>
     <QueHacemos />
   </main>
-  <Footer />
 </Layout>
 
 <!-- Configura el script para que se ejecute en el cliente -->
