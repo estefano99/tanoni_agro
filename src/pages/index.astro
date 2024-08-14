@@ -1,8 +1,10 @@
 ---
-import Carrusel from "@/components/Carrusel.astro";
+import Carrusel from "@/components/index/Carrusel.astro";
 import Layout from "../layouts/Layout.astro";
 import "@/styles/globals.css";
 import Footer from "@/components/Footer.astro";
+import QueHacemos from "@/components/index/QueHacemos.astro";
+import Hero from "@/components/Hero.astro";
 ---
 
 <Layout title="Tanoni Agro">
@@ -28,22 +30,22 @@ import Footer from "@/components/Footer.astro";
     <section class="w-full h-[600px] flex justify-center items-center">
       <Carrusel />
     </section>
+    <QueHacemos />
   </main>
-  <Footer/>
+  <Footer />
 </Layout>
-
 
 <!-- Configura el script para que se ejecute en el cliente -->
 <script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    ScrollReveal().reveal('.headline', {
+  document.addEventListener("DOMContentLoaded", () => {
+    ScrollReveal().reveal(".headline", {
       reset: true, // Permite que la animación se repita al volver a entrar en el viewport
-      distance: '150px', // Ajusta la distancia del desplazamiento
+      distance: "150px", // Ajusta la distancia del desplazamiento
       duration: 2000, // Ajusta la duración de la animación en milisegundos
-      easing: 'ease-in-out', // Ajusta el easing para suavizar el efecto
-      origin: 'right', // Ajusta la dirección de origen de la animación
+      easing: "ease-in-out", // Ajusta el easing para suavizar el efecto
+      origin: "right", // Ajusta la dirección de origen de la animación
       interval: 200, // Añade un pequeño retraso entre los elementos
-			delay: 300
+      delay: 300,
     });
   });
 </script>

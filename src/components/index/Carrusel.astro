@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import tractor from "../images/tractor1.avif";
-import fondoCampo from "../images/fondoCampo.avif";
-import logo from "../images/logo.png";
+import tractor from "../../images/tractor1.avif";
+import fondoCampo from "../../images/fondoCampo.avif";
+import logo from "../../images/logo.png";
 ---
 
 <div
@@ -31,23 +31,23 @@ import logo from "../images/logo.png";
     <!-- Item 3 -->
     <div class="hidden duration-700 ease-in-out" data-carousel-item>
       <Image
-        src={logo}
+        src={fondoCampo}
         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         alt="logo"
       />
     </div>
     <!-- Item 4 -->
     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img
-        src={tractor.src}
+      <Image
+        src={tractor}
         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         alt="..."
       />
     </div>
     <!-- Item 5 -->
     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img
-        src={tractor.src}
+      <Image
+        src={tractor}
         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         alt="..."
       />
@@ -147,7 +147,7 @@ import logo from "../images/logo.png";
     ScrollReveal().reveal(".carruselReveal", {
       reset: true,
       scale: 0.85,
-      duration: 500, // Ajusta la duración de la animación en milisegundos
+      duration: 800, // Ajusta la duración de la animación en milisegundos
       easing: "ease-in-out", // Ajusta el easing para suavizar el efecto
       interval: 200, // Añade un pequeño retraso entre los elementos
       delay: 300,
