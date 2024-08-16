@@ -116,7 +116,7 @@ const Navbar = () => {
             Qué hacemos
           </a>
           <a
-            href="#contact"
+            href="\contacto"
             className="text-md font-semibold leading-6 "
           >
             Contacto
