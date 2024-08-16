@@ -92,16 +92,10 @@ const Navbar = () => {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           <a
-            href="#home"
+            href="/"
             className="text-md font-semibold leading-6 "
           >
             Inicio
-          </a>
-          <a
-            href="#services"
-            className="text-md font-semibold leading-6 "
-          >
-            Servicios
           </a>
           <a
             href="\nosotros"
@@ -110,7 +104,7 @@ const Navbar = () => {
             Nosotros
           </a>
           <a
-            href="#what-we-do"
+            href="/quehacemos"
             className="text-md font-semibold leading-6 "
           >
             Qué hacemos

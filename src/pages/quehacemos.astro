@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import Card from "@/components/index/Card.astro";
+import tractor from "../images/tractor1.avif";
+---
+
+<Layout title="Tanoni Agro - Que hacemos">
+	<section class="flex flex-col gap-10 md:gap-0 px-32 mb-16">
+    <div class="w-full h-[100px] flex items-center justify-center">
+        <h2 class="text-2xl font-bold text-gray-700">QUE HACEMOS</h2>
+        <hr class="flex-grow border-t border-gray-300 ml-4" />
+    </div>
+    <div class="flex flex-col gap-10 w-full">
+      <!-- CARD -->
+      <div class="flex w-full h-64 gap-8">
+        <div class="w-2/6">
+          <Image src={tractor} alt="Tractor" class="w-full" />
+        </div>
+        <div class="flex flex-col w-4/6">
+          <h3 class="text-clamp-sm">CEREALES</h3>
+          <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, vero omnis deleniti dignissimos facilis distinctio aperiam animi soluta delectus fuga commodi odit, officiis, rem et vel consectetur molestias ab mollitia.</p>
+        </div>
+      </div>
+      <!-- CARD -->
+      <div class="flex w-full h-64 gap-8">
+        <div class="w-2/6">
+          <Image src={tractor} alt="Tractor" class="w-full" />
+        </div>
+        <div class="flex flex-col w-4/6">
+          <h3 class="text-clamp-sm">SUBPRODUCTOS / ACEITES</h3>
+          <p class="text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia exercitationem cum sunt esse voluptate nobis?</p>
+        </div>
+      </div>
+      <div class="flex w-full h-64 gap-8">
+        <div class="w-2/6">
+          <Image src={tractor} alt="Tractor" class="w-full" />
+        </div>
+        <div class="flex flex-col w-4/6">
+          <h3 class="text-clamp-sm">SEGUROS DE GRANIZO</h3>
+          <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat illum quos dolorem architecto, alias explicabo error voluptatibus quisquam, corporis incidunt sint, quis molestiae nesciunt?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        "clamp-xs": ["clamp(1rem, 1.5vw, 1.5rem)", "1.2"],
+        "clamp-xs": ["clamp(1rem, 1.25vw, 1.25rem)", "1.1"],
         "clamp-sm": ["clamp(1.5rem, 3vw, 2.5rem)", "1.4"],
         "clamp-md": ["clamp(2rem, 4vw, 3rem)", "1.6"],
         "clamp-lg": ["clamp(2.5rem, 5vw, 4rem)", "1.8"],
