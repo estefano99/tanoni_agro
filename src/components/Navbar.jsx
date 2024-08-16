@@ -14,14 +14,14 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const sr = ScrollReveal({
-      reset: true,
-      distance: "30px",
-      duration: 1000,
-      easing: "ease-in-out",
-    });
+    // const sr = ScrollReveal({
+    //   reset: true,
+    //   distance: "30px",
+    //   duration: 1000,
+    //   easing: "ease-in-out",
+    // });
 
-    sr.reveal(".navbarReveal", { delay: 200 });
+    // sr.reveal(".navbarReveal", { delay: 200 });
 
     const navbar = document.querySelector(".navbarReveal");
     const path = window.location.pathname;
