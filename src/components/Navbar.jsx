@@ -46,14 +46,14 @@ const Navbar = () => {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-transparent flex justify-center navbarReveal">
       <nav
-        className="flex items-center justify-between p-6 lg:px-8 w-[1120px]"
+        className="flex items-center justify-between py-3 lg:px-8 w-[1120px]"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img
-              className="h-12 w-auto logoReveal"
+              className="w-20 logoReveal"
               src={logo.src}
               alt="Logo"
               loading="lazy"
@@ -90,34 +90,34 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:items-center lg:gap-x-12 link-styles">
           <a
             href="/"
-            className="text-md font-semibold leading-6 "
+            className="text-md font-semibold leading-6 hover:scale-105 hover:outline outline-offset-8 outline-2 transition-all"
           >
             Inicio
           </a>
           <a
             href="\nosotros"
-            className="text-md font-semibold leading-6 "
+            className="text-md font-semibold leading-6 hover:scale-105 hover:outline outline-offset-8 outline-2 transition-all"
           >
             Nosotros
           </a>
           <a
             href="/quehacemos"
-            className="text-md font-semibold leading-6 "
+            className="text-md font-semibold leading-6 hover:scale-105 hover:outline outline-offset-8 outline-2 transition-all"
           >
             Qué hacemos
           </a>
           <a
             href="\contacto"
-            className="text-md font-semibold leading-6 "
+            className="text-md font-semibold leading-6 hover:scale-105 hover:outline outline-offset-8 outline-2 transition-all"
           >
             Contacto
           </a>
           <button
             onClick={toggleLanguage}
-            className="text-md font-semibold leading-6 "
+            className={`${language == "ES" ? "outline-amber-300 text-red-600 active:outline-offset-[6px]" : "outline-red-700 text-blue-700 active:outline-offset-[6px]"} bg-opacity-35 text-md font-semibold leading-6 hover:scale-105 transition-all outline outline-2 rounded-full outline-offset-4 px-1`}
           >
             {language}
           </button>
