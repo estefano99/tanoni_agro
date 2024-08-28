@@ -8,7 +8,7 @@ import logo from "../../images/logo.png";
 <section class="w-full mt-11 h-[500px] flex justify-center items-center">
   <div
     id="default-carousel"
-    class="relative w-4/5 carruselReveal"
+    class="relative w-4/5"
     data-carousel="slide"
   >
     <!-- Carousel wrapper -->
@@ -142,16 +142,3 @@ import logo from "../../images/logo.png";
     </button>
   </div>
 </section>
-
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    ScrollReveal().reveal(".carruselReveal", {
-      reset: true,
-      scale: 0.85,
-      duration: 800, // Ajusta la duración de la animación en milisegundos
-      easing: "ease-in-out", // Ajusta el easing para suavizar el efecto
-      interval: 200, // Añade un pequeño retraso entre los elementos
-      delay: 300,
-    });
-  });
-</script>

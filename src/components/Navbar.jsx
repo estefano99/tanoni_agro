@@ -1,6 +1,29 @@
 import { useState, useEffect } from "react";
 import logo from "../images/logo.png";
 
+const svgArgentina = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    id="flag-icons-ar"
+    viewBox="0 0 640 480"
+  >
+    <path fill="#74acdf" d="M0 0h640v480H0z" />
+    <path fill="#fff" d="M0 160h640v160H0z" />
+    <circle cx="320" cy="240" r="40" fill="#f6b40e" />
+  </svg>
+);
+
+const svgIngles = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    id="flag-icons-gb-eng"
+    viewBox="0 0 640 480"
+  >
+    <path fill="#fff" d="M0 0h640v480H0z" />
+    <path fill="#cf142b" d="M272 0h96v480h-96zM0 192h640v96H0z" />
+  </svg>
+);
+
 const Navbar = () => {
   const [language, setLanguage] = useState("ES");
   const [isOpen, setIsOpen] = useState(false);
@@ -14,39 +37,21 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    // const sr = ScrollReveal({
-    //   reset: true,
-    //   distance: "30px",
-    //   duration: 1000,
-    //   easing: "ease-in-out",
-    // });
-
-    // sr.reveal(".navbarReveal", { delay: 200 });
-
     const navbar = document.querySelector(".navbarReveal");
     const path = window.location.pathname;
 
     if (path !== "/") {
-      navbar.classList.add("sticky", "text-black");
+      navbar.classList.add("sticky", "text-black", "bg-slate-200");
       navbar.classList.remove("fixed");
     } else {
       navbar.classList.add("text-white");
     }
-
-    // sr.reveal(".logoReveal", {
-    //   reset:false,
-    //   duration: 2000,
-    //   rotate: {
-    //     x: 1,  
-    //     y: 100,
-    //   },
-    // });
   }, []);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-transparent flex justify-center navbarReveal">
       <nav
-        className="flex items-center justify-between py-3 lg:px-8 w-[1120px]"
+        className="flex items-center justify-between py-3 lg:px-8 w-full max-w-screen-xl"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -93,33 +98,47 @@ const Navbar = () => {
         <div className="hidden lg:flex lg:items-center lg:gap-x-12 link-styles">
           <a
             href="/"
-            className="text-md font-semibold leading-6 hover:scale-105 hover:outline outline-offset-8 outline-2 transition-all"
+            className="flex-1 text-md font-semibold leading-6 hover:scale-105 hover:outline outline-offset-8 outline-2 transition-all"
           >
             Inicio
           </a>
           <a
             href="\nosotros"
-            className="text-md font-semibold leading-6 hover:scale-105 hover:outline outline-offset-8 outline-2 transition-all"
+            className="flex-1 text-md font-semibold leading-6 hover:scale-105 hover:outline outline-offset-8 outline-2 transition-all"
           >
             Nosotros
           </a>
           <a
             href="/quehacemos"
-            className="text-md font-semibold leading-6 hover:scale-105 hover:outline outline-offset-8 outline-2 transition-all"
+            className="flex-1 text-md font-semibold leading-6 hover:scale-105 hover:outline outline-offset-8 outline-2 transition-all"
           >
             Qué hacemos
           </a>
           <a
             href="\contacto"
-            className="text-md font-semibold leading-6 hover:scale-105 hover:outline outline-offset-8 outline-2 transition-all"
+            className="flex-1 text-md font-semibold leading-6 hover:scale-105 hover:outline outline-offset-8 outline-2 transition-all"
           >
             Contacto
           </a>
           <button
             onClick={toggleLanguage}
-            className={`${language == "ES" ? "outline-amber-300 text-red-600 active:outline-offset-[6px]" : "outline-red-700 text-blue-700 active:outline-offset-[6px]"} bg-opacity-35 text-md font-semibold leading-6 hover:scale-105 transition-all outline outline-2 rounded-full outline-offset-4 px-1`}
+            className={`${
+              language == "ES"
+                ? " "
+                : " "
+            } flex-1 flex justify-center gap-2 items-center text-md font-semibold leading-6 hover:scale-105 hover:outline outline-offset-8 outline-2 transition-all`}
           >
-            {language}
+            {language === "ES" ? (
+              <>
+                <span className="ml-2">{language}</span>
+                {svgArgentina}
+              </>
+            ) : (
+              <>
+                <span className="ml-2">{language}</span>
+                {svgIngles}
+              </>
+            )}
           </button>
         </div>
       </nav>
