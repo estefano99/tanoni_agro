@@ -5,29 +5,30 @@ import QueHacemos from "@/components/index/QueHacemos.astro";
 ---
 
 <Layout title="Tanoni Agro">
-  <main>
+  <main transition:animate="slide">
     <section
       class="h-[100svh] relative w-full bg-negociaciones-image bg-fixed bg-center bg-no-repeat bg-cover"
     >
-    <div class="absolute inset-0 bg-black/50 z-10"></div>
+      <div class="absolute inset-0 bg-black/55 z-10"></div>
       <div class="relative h-full w-4/5 flex mx-auto items-center z-20">
         <div class="md:w-1/2 flex flex-col gap-2 headline">
-          <p class="text-xl text-gray-400">Realizamos tareas de terceros</p>
+          <p class="text-xl text-gray-300">
+            Conectando el campo con el mercado.
+          </p>
           <h1 class="text-white text-clamp-sm font-black">
-            Lorem ipsum dolor sit, amet consectetur!
+            Soluciones integrales en corretaje de cereales
           </h1>
           <p class="text-gray-300">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, nemo!
-            Inventore, officiis aliquam? Ipsa officiis quisquam, dolores culpa
-            laboriosam tenetur hic reiciendis voluptatem, eius voluptate
-            praesentium omnis officia maxime qui.
+            En Tanoni Agro SRL, somos una empresa familiar comenzando en el
+            corretaje de cereales, aceites y subproductos en el mercado
+            agropecuario argentino. Nuestro compromiso es ofrecer soluciones
+            integrales y personalizadas que potencien el éxito de
+            nuestros clientes.
           </p>
         </div>
       </div>
     </section>
-    <section class="w-full h-[600px] flex justify-center items-center">
-      <Carrusel />
-    </section>
+    <Carrusel />
     <QueHacemos />
   </main>
 </Layout>
@@ -36,7 +37,7 @@ import QueHacemos from "@/components/index/QueHacemos.astro";
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
     ScrollReveal().reveal(".headline", {
-      reset: true, // Permite que la animación se repita al volver a entrar en el viewport
+      reset: false, // Permite que la animación se repita al volver a entrar en el viewport
       distance: "150px", // Ajusta la distancia del desplazamiento
       duration: 2000, // Ajusta la duración de la animación en milisegundos
       easing: "ease-in-out", // Ajusta el easing para suavizar el efecto

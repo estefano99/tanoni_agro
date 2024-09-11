@@ -2,43 +2,142 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Card from "@/components/index/Card.astro";
-import tractor from "../images/tractor1.avif";
+import cereales from "../images/cereales.png";
+import subproductos from "../images/subproductos.png";
+import segurosgranizo from "../images/segurosgranizo.png";
+import { slide } from "astro:transitions";
+import { BadgeCheck } from "lucide-react";
+import { cardCereales, cardSubProductos, cardGranizo } from "@/data";
 ---
 
-<Layout title="Tanoni Agro - Que hacemos">
-	<section class="flex flex-col gap-10 md:gap-0 px-32 mb-16">
+<Layout title="Tanoni Agro - Qué hacemos">
+  <section
+    class="flex flex-col gap-10 md:gap-0 px-5 box-border md:px-32 mb-16"
+    transition:animate="fade"
+  >
     <div class="w-full h-[100px] flex items-center justify-center">
-        <h2 class="text-2xl font-bold text-gray-700">QUE HACEMOS</h2>
-        <hr class="flex-grow border-t border-gray-300 ml-4" />
+      <h2 class="text-2xl font-bold text-gray-700">QUE HACEMOS</h2>
+      <hr class="flex-grow border-t border-gray-300 ml-4" />
     </div>
-    <div class="flex flex-col gap-10 w-full">
+    <div class="flex flex-col gap-20 w-full">
       <!-- CARD -->
-      <div class="flex w-full h-64 gap-8">
-        <div class="w-2/6">
-          <Image src={tractor} alt="Tractor" class="w-full" />
+      <div
+        class="flex flex-col md:items-center md:flex-row w-full min-h-64 gap-8"
+      >
+        <div class="w-full h-full md:w-2/6">
+          <Image src={cereales} alt="Tractor" class="w-4/5 mx-auto" />
         </div>
-        <div class="flex flex-col w-4/6">
-          <h3 class="text-clamp-sm">CEREALES</h3>
-          <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, vero omnis deleniti dignissimos facilis distinctio aperiam animi soluta delectus fuga commodi odit, officiis, rem et vel consectetur molestias ab mollitia.</p>
+        <div class="flex flex-col w-full h-full md:w-4/6 gap-2">
+          <h3 class="text-clamp-sm font-bold text-slate-800">
+            {cardCereales.title}
+          </h3>
+          <h5 class="text-xl font-bold text-slate-500">
+            {cardCereales.subTitle}
+          </h5>
+          <p class="text-md font-semibold text-gray-600">
+            {cardCereales.description}
+          </p>
+          <p class="text-md font-bold text-gray-500">Puntos Destacados:</p>
+          <ul class="flex flex-col gap-2 text-md font-semibold text-gray-500">
+            <li class="flex gap-2">
+              <div class="flex-shrink-0">
+                <BadgeCheck color="#13ec04" />
+              </div>
+              {cardCereales.items[0]}
+            </li>
+            <li class="flex gap-2">
+              <div class="flex-shrink-0">
+                <BadgeCheck color="#13ec04" />
+              </div>
+              {cardCereales.items[1]}
+            </li>
+            <li class="flex gap-2">
+              <div class="flex-shrink-0">
+                <BadgeCheck color="#13ec04" />
+              </div>
+              {cardCereales.items[2]}
+            </li>
+          </ul>
         </div>
       </div>
       <!-- CARD -->
-      <div class="flex w-full h-64 gap-8">
-        <div class="w-2/6">
-          <Image src={tractor} alt="Tractor" class="w-full" />
+      <div
+        class="flex flex-col md:flex-row md:items-center w-full min-h-64 gap-8"
+      >
+        <div class="w-full md:w-2/6">
+          <Image src={subproductos} alt="Tractor" class="w-4/5 mx-auto" />
         </div>
-        <div class="flex flex-col w-4/6">
-          <h3 class="text-clamp-sm">SUBPRODUCTOS / ACEITES</h3>
-          <p class="text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia exercitationem cum sunt esse voluptate nobis?</p>
+        <div class="flex flex-col w-full h-full md:w-4/6 gap-2">
+          <h3 class="text-clamp-sm font-bold text-slate-800">
+            {cardSubProductos.title}
+          </h3>
+          <h5 class="text-xl font-bold text-slate-500">
+            {cardSubProductos.subTitle}
+          </h5>
+          <p class="text-md font-semibold text-gray-600">
+            {cardSubProductos.description}
+          </p>
+          <p class="text-md font-bold text-gray-500">Puntos Destacados:</p>
+          <ul class="flex flex-col gap-2 text-md font-semibold text-gray-500">
+            <li class="flex gap-2">
+              <div class="flex-shrink-0">
+                <BadgeCheck color="#13ec04" />
+              </div>
+              {cardCereales.items[0]}
+            </li>
+            <li class="flex gap-2">
+              <div class="flex-shrink-0">
+                <BadgeCheck color="#13ec04" />
+              </div>
+              {cardCereales.items[1]}
+            </li>
+            <li class="flex gap-2">
+              <div class="flex-shrink-0">
+                <BadgeCheck color="#13ec04" />
+              </div>
+              {cardCereales.items[2]}
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="flex w-full h-64 gap-8">
-        <div class="w-2/6">
-          <Image src={tractor} alt="Tractor" class="w-full" />
+      <!-- CARD -->
+      <div
+        class="flex flex-col md:flex-row md:items-center w-full min-h-64 gap-8"
+      >
+        <div class="w-full md:w-2/6">
+          <Image src={segurosgranizo} alt="Tractor" class="w-4/5 mx-auto" />
         </div>
-        <div class="flex flex-col w-4/6">
-          <h3 class="text-clamp-sm">SEGUROS DE GRANIZO</h3>
-          <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat illum quos dolorem architecto, alias explicabo error voluptatibus quisquam, corporis incidunt sint, quis molestiae nesciunt?</p>
+        <div class="flex flex-col w-full md:w-4/6 gap-2">
+          <h3 class="text-clamp-sm font-bold text-slate-800">
+            {cardGranizo.title}
+          </h3>
+          <h5 class="text-xl font-bold text-slate-500">
+            {cardGranizo.subTitle}
+          </h5>
+          <p class="text-md font-semibold text-gray-600">
+            {cardGranizo.description}
+          </p>
+          <p class="text-md font-bold text-gray-500">Puntos Destacados:</p>
+          <ul class="flex flex-col gap-2 text-md font-semibold text-gray-500">
+            <li class="flex gap-2">
+              <div class="flex-shrink-0">
+                <BadgeCheck color="#13ec04" />
+              </div>
+              {cardCereales.items[0]}
+            </li>
+            <li class="flex gap-2">
+              <div class="flex-shrink-0">
+                <BadgeCheck color="#13ec04" />
+              </div>
+              {cardCereales.items[1]}
+            </li>
+            <li class="flex gap-2">
+              <div class="flex-shrink-0">
+                <BadgeCheck color="#13ec04" />
+              </div>
+              {cardCereales.items[2]}
+            </li>
+          </ul>
         </div>
       </div>
     </div>

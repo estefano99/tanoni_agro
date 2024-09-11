@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Logo from "../images/logo.png";
 import Footer from "@/components/Footer.astro";
 import "@/styles/globals.css";
+import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
   title: string;
@@ -20,6 +21,7 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href={Logo.src} />
     <script src="https://unpkg.com/scrollreveal" is:inline defer></script>
     <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
     <title>{title}</title>
   </head>
   <body class="flex flex-col min-h-[100vh]">
@@ -57,5 +59,13 @@ const { title } = Astro.props;
       Bitstream Vera Sans Mono,
       Courier New,
       monospace;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .link-styles {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 </style>
