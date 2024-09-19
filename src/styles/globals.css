@@ -11,8 +11,21 @@
   }
 }
 
+@keyframes enhance-btn {
+  to {
+    color: rgba(22, 21, 21, 0.979);
+    font-weight: bold;
+  }
+}
+
 header {
   animation: enhance-header linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0 200px;
+}
+
+.btnRenderizado div {
+  animation: enhance-btn linear both;
   animation-timeline: scroll(root);
   animation-range: 0 200px;
 }

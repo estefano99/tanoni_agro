@@ -4,16 +4,16 @@ const { lang } = Astro.props;
 
 const navLinks = {
   en: [
-    { name: "home", path: "/en/" },
+    { name: "Home", path: "/en/" },
     { name: "Who we are", path: "/en/nosotros/" },
     { name: "What we do", path: "/en/quehacemos/" },
-    { name: "contact us", path: "/en/contacto/" },
+    { name: "Contact us", path: "/en/contacto/" },
   ],
   es: [
-    { name: "inicio", path: "/es/" },
-    { name: "nosotros", path: "/es/nosotros/" },
-    { name: "que hacemos", path: "/es/quehacemos/" },
-    { name: "contacto", path: "/es/contacto/" },
+    { name: "Inicio", path: "/es/" },
+    { name: "Nosotros", path: "/es/nosotros/" },
+    { name: "Que hacemos", path: "/es/quehacemos/" },
+    { name: "Contacto", path: "/es/contacto/" },
   ],
 };
 
@@ -40,7 +40,7 @@ const links = navLinks[lang] || "es";
         <button
           type="button"
           data-dropdown-toggle="language-dropdown-menu"
-          class="btnRenderizado inline-flex items-center font-medium justify-center px-4 py-2 text-sm rounded-lg cursor-pointer hover:bg-slate-500/60"
+          class="btnRenderizado inline-flex items-center font-medium justify-center px-4 py-2 text-sm rounded-lg cursor-pointer hover:bg-slate-500/30"
         >
           <div class="inline-flex items-center">
             <svg

@@ -1,0 +1,36 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { MapPin, MessageCircleMore, Phone, Mail } from "lucide-react";
+---
+
+<Layout title="Tanoni Agro - Contacto">
+  <section class="w-full" transition:animate="slide">
+    <div class="w-full h-[100px] flex items-center justify-center">
+      <div class="w-4/5 flex justify-center items-center">
+        <h2 class="text-xl font-bold text-gray-700">CONTACT US</h2>
+        <hr class="flex-grow border-t border-gray-300 ml-4" />
+      </div>
+    </div>
+
+    <article class="w-full py-5 bg-gray-100">
+      <div class="w-4/5 flex flex-col md:flex-row mx-auto gap-10 md:gap-0">
+        <div class="w-full flex flex-col justify-center gap-5">
+          <h2 class="text-xl font-bold opacity-55">Geographical Location</h2>
+          <p class="flex gap-2">
+            <MapPin /> Moreno 349. Bombal, Santa Fe, Argentina.
+          </p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.585395176801!2d-61.3238819244658!3d-33.4601067733857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7e0294ebdc52f%3A0x45a8522654395188!2sMoreno%20349%2C%20S2179%20Bombal%2C%20Santa%20Fe!5e0!3m2!1ses-419!2sar!4v1723761203769!5m2!1ses-419!2sar"
+            width="400"
+            height="250"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </article>
+  </section>
+</Layout>

@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import Logo from "../images/logo.png";
 import { Mail, MessageCircleMore, Phone } from "lucide-react";
+
+const { lang } = Astro.props;
 ---
 
 <footer class="bg-white dark:bg-gray-900">
@@ -12,7 +14,8 @@ import { Mail, MessageCircleMore, Phone } from "lucide-react";
           <Image src={Logo} class="h-8 w-8 me-3" alt="Tanoni Agro Logo" />
           <span
             class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-            >Tanoni Agro</span
+            >Tanoni Agro
+          </span
           >
         </a>
       </div>
@@ -21,7 +24,7 @@ import { Mail, MessageCircleMore, Phone } from "lucide-react";
           <h2
             class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
           >
-            Email
+            {lang === "es" ? "Email" : "Email"}
           </h2>
           <ul class="text-gray-500 dark:text-gray-400 font-medium">
             <li class="mb-4">
@@ -44,7 +47,7 @@ import { Mail, MessageCircleMore, Phone } from "lucide-react";
           <h2
             class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
           >
-            Teléfono
+          {lang === "es" ? "Telefono" : "Phone"}
           </h2>
           <ul class="text-gray-500 dark:text-gray-400 font-medium">
             <li class="mb-4">
