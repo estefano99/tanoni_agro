@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { MapPin, MessageCircleMore, Phone, Mail } from "lucide-react";
+const { lang } = Astro.props;
 ---
 
 <Layout title="Tanoni Agro - Contacto">
@@ -32,50 +33,48 @@ import { MapPin, MessageCircleMore, Phone, Mail } from "lucide-react";
         </div>
         <div class="w-[60%] flex flex-col gap-5">
           <h2 class="text-xl font-bold opacity-55">Datos de contacto</h2>
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6"
-          >
+          <div class="flex flex-wrap gap-6">
             <div>
               <h2
                 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
               >
-                Email
+                {lang === "es" ? "Email" : "Email"}
               </h2>
               <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
                   <a
-                    href="mailto:jtanoni@tanoni.com.ar"
+                    href="mailto:jose.castro@tanoniagro.com.ar"
                     target="_blank"
-                    class="hover:underline flex gap-1"
-                    ><Mail /> pepito@gmail.com</a
+                    class="hover:underline flex gap-1"><Mail /> jose.castro@tanoniagro.com.ar</a
                   >
                 </li>
                 <li>
                   <a
-                    href="mailto:jtanoni@tanoni.com.ar"
+                    href="mailto:carola.tanoni@tanoniagro.com.ar"
                     target="_blank"
-                    class="hover:underline flex gap-1"
-                    ><Mail /> pepito@gmail.com</a
+                    class="hover:underline flex gap-1"><Mail /> carola.tanoni@tanoniagro.com.ar</a
                   >
                 </li>
               </ul>
             </div>
-            <div>
+            <div class="md:w-1/2">
               <h2
                 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
               >
-                Teléfono
+              {lang === "es" ? "Telefono" : "Phone"}
               </h2>
               <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                  <a href="tel:3465497018" class="hover:underline flex gap-1"
-                    ><Phone /> 3465497018
-                  </a>
+                  <a href="tel:3413761704" class="hover:underline flex gap-1"
+                    ><Phone /> 3413761704
+                  </a
+                  >
                 </li>
                 <li>
-                  <a href="tel:3465497018" class="hover:underline flex gap-1"
-                    ><Phone /> 3465497018
-                  </a>
+                  <a href="tel:3465409977" class="hover:underline flex gap-1"
+                    ><Phone /> 3465409977
+                  </a
+                  >
                 </li>
               </ul>
             </div>
@@ -88,23 +87,22 @@ import { MapPin, MessageCircleMore, Phone, Mail } from "lucide-react";
               <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
                   <a
-                    href="https://wa.me/3465655542"
+                    href="https://wa.me/3413761704"
                     target="_blank"
-                    class="hover:underline flex gap-1"
-                    ><MessageCircleMore /> Martin Tanoni</a
+                    class="hover:underline flex gap-1"><MessageCircleMore /> JOSE MARIA CASTRO</a
                   >
                 </li>
                 <li>
                   <a
-                    href="https://wa.me/3465655542"
+                    href="https://wa.me/3465409977"
                     target="_blank"
-                    class="hover:underline flex gap-1"
-                    ><MessageCircleMore />Claudia Tanoni</a
+                    class="hover:underline flex gap-1"><MessageCircleMore />CAROLA TANONI</a
                   >
                 </li>
               </ul>
             </div>
           </div>
+          
         </div>
       </div>
     </article>

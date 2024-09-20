@@ -40,9 +40,9 @@ const links = navLinks[lang] || "es";
         <button
           type="button"
           data-dropdown-toggle="language-dropdown-menu"
-          class="btnRenderizado inline-flex items-center font-medium justify-center px-4 py-2 text-sm rounded-lg cursor-pointer hover:bg-slate-500/30"
+          class="btnRenderizado inline-flex items-center font-medium justify-center md:px-4 md:py-2 text-sm rounded-lg cursor-pointer hover:bg-slate-500/30"
         >
-          <div class="inline-flex items-center">
+          <div class=" inline-flex items-center">
             <svg
               xmlns=" "
               id="flag-icons-ar"
@@ -176,6 +176,7 @@ const links = navLinks[lang] || "es";
 <script>
   import { btnES, btnEn } from "@/lib/constantes";
   const btnRenderizado = document.querySelector(".btnRenderizado");
+  const header = document.querySelector("header");
 
   // Obtener el idioma actual desde la URL
   const getCurrentLanguageFromUrl = () => {
@@ -233,8 +234,10 @@ const links = navLinks[lang] || "es";
     if (path === "/es/" || path === "/en/") {
       // Si el path es exactamente "/es" o "/en", se aplican estas clases
       navbar.classList.add("md:text-white", "text-black");
+      btnRenderizado.classList.add("md:text-white", "text-black", "bg-slate-600/30");
     } else {
       navbar.classList.add("sticky", "text-black", "bg-slate-200");
+      btnRenderizado.classList.add("bg-slate-600/40");
     }
   });
 </script>
