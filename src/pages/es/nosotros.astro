@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import Layout from "../layouts/Layout.astro";
-import Mision from "../images/mision.jpg";
-import Empresa from "../images/empresa.jpg";
+import Layout from "../../layouts/Layout.astro";
+import Mision from "../../images/mision.jpg";
+import Empresa from "../../images/empresa.jpg";
 import "@/styles/globals.css";
 ---
 
@@ -22,10 +22,10 @@ import "@/styles/globals.css";
         class="w-full md:w-[60%] h-full flex flex-col md:items-center ml-5 md:ml-0"
       >
         <div class="w-[90%] md:w-[60%] flex flex-col gap-5">
-          <h2 class="text-2xl md:text-6xl font-semibold opacity-80">
+          <h2 class="laEmpresa text-2xl md:text-6xl font-semibold opacity-80">
             La empresa
           </h2>
-          <p>
+          <p class="laEmpresa">
             <span class="font-bold">Tanoni Agro SRL</span> es una empresa familiar
             enfocada en el corretaje de cereales, aceites, subproductos y servicios
             relacionados en el mercado argentino. Desde nuestra fundación, nos hemos
@@ -65,10 +65,10 @@ import "@/styles/globals.css";
         <div
           class="w-[90%] md:w-4/5 flex flex-col justify-center items-start gap-5"
         >
-          <h2 class="text-xl md:text-4xl font-semibold opacity-80">
+          <h2 class="nuestraMision text-xl md:text-4xl font-semibold opacity-80">
             Nuestra Misión
           </h2>
-          <p>
+          <p class="nuestraMision">
             Especializarnos en <span class="font-bold"
               >facilitar las transacciones comerciales entre productores y
               compradores
@@ -87,10 +87,10 @@ import "@/styles/globals.css";
       class="min-h-[500px] md:h-[500px] w-full flex flex-col md:flex-row justify-center items-center gap-5 bg-slate-50"
     >
       <div
-        class="h-1/2 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        class="valores h-1/2 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
       >
         <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+          class="valores mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
         >
           Propósito
         </h5>
@@ -102,7 +102,7 @@ import "@/styles/globals.css";
         </p>
       </div>
       <div
-        class="block h-1/2 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        class="valores block h-1/2 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
       >
         <h5
           class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
@@ -116,7 +116,7 @@ import "@/styles/globals.css";
         </p>
       </div>
       <div
-        class="block h-1/2 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        class="valores block h-1/2 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
       >
         <h5
           class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
@@ -134,3 +134,36 @@ import "@/styles/globals.css";
     </article>
   </section>
 </Layout>
+
+<!-- Configura el script para que se ejecute en el cliente -->
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    ScrollReveal().reveal(".laEmpresa", {
+      reset: false, // Permite que la animación se repita al volver a entrar en el viewport
+      distance: "150px", // Ajusta la distancia del desplazamiento
+      duration: 2000, // Ajusta la duración de la animación en milisegundos
+      easing: "ease-in-out", // Ajusta el easing para suavizar el efecto
+      origin: "left", // Ajusta la dirección de origen de la animación
+      interval: 200, // Añade un pequeño retraso entre los elementos
+      delay: 300,
+    });
+    ScrollReveal().reveal(".nuestraMision", {
+      reset: false,
+      distance: "150px",
+      duration: 2000,
+      easing: "ease-in-out",
+      origin: "right",
+      interval: 200,
+      delay: 300,
+    });
+    ScrollReveal().reveal(".valores", {
+      reset: false,
+      distance: "150px",
+      duration: 2000,
+      easing: "ease-in-out",
+      origin: "bottom",
+      interval: 200,
+      delay: 300,
+    });
+  });
+</script>

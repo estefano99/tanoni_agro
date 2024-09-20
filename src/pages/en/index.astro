@@ -1,0 +1,48 @@
+---
+import Carrusel from "@/components/index/Carrusel.astro";
+import Layout from "../../layouts/Layout.astro";
+import QueHacemos from "@/components/index/en/QueHacemos.astro";
+---
+
+<Layout title="Tanoni Agro">
+  <main transition:animate="slide">
+    <section
+      class="h-[100svh] relative w-full bg-negociaciones-image bg-fixed bg-center bg-no-repeat bg-cover"
+    >
+      <div class="absolute inset-0 bg-black/55 z-10"></div>
+      <div class="relative h-full w-4/5 flex mx-auto items-center z-20">
+        <div class="md:w-1/2 flex flex-col gap-2 headline">
+          <p class="text-xl text-gray-300">
+            Connecting the field with the market.
+          </p>
+          <h1 class="text-white text-clamp-sm font-black">
+            Comprehensive solutions in grain brokerage.
+          </h1>
+          <p class="text-gray-300">
+            At Tanoni Agro SRL, we are a family business starting in the
+            brokerage of grains, oils, and by-products in the Argentine
+            agricultural market. Our commitment is to offer comprehensive and
+            personalized solutions that enhance the success of our clients.
+          </p>
+        </div>
+      </div>
+    </section>
+    <Carrusel />
+    <QueHacemos />
+  </main>
+</Layout>
+
+<!-- Configura el script para que se ejecute en el cliente -->
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    ScrollReveal().reveal(".headline", {
+      reset: false, // Permite que la animación se repita al volver a entrar en el viewport
+      distance: "150px", // Ajusta la distancia del desplazamiento
+      duration: 2000, // Ajusta la duración de la animación en milisegundos
+      easing: "ease-in-out", // Ajusta el easing para suavizar el efecto
+      origin: "right", // Ajusta la dirección de origen de la animación
+      interval: 200, // Añade un pequeño retraso entre los elementos
+      delay: 300,
+    });
+  });
+</script>
