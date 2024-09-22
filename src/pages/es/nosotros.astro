@@ -1,9 +1,10 @@
 ---
-import { Image } from "astro:assets";
+// import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import Mision from "../../images/mision.jpg";
 import Empresa from "../../images/empresa.jpg";
 import "@/styles/globals.css";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Tanoni Agro - Nosotros">
@@ -39,7 +40,7 @@ import "@/styles/globals.css";
       <div
         class="w-full md:w-[40%] h-full flex items-center justify-center md:justify-start"
       >
-        <img src="../../images/empresa.jpg" loading="lazy" alt="La empresa" class="md:h-4/6 md:w-4/6" alt="La Empresa" />
+        <img src={Empresa.src} alt="La empresa" class="md:h-4/6 md:w-4/6" />
       </div>
     </article>
 
@@ -53,9 +54,7 @@ import "@/styles/globals.css";
       >
         <div class="w-full md:w-[80%] flex justify-center">
           <img
-            src="../../images/mision.jpg"
-            loading="lazy"
-            alt="La mision"
+            src={Mision.src}
             class="md:h-[90%] md:w-[90%]"
             alt="Mision empresarial"
           />
@@ -139,33 +138,33 @@ import "@/styles/globals.css";
 
 <!-- Configura el script para que se ejecute en el cliente -->
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    ScrollReveal().reveal(".laEmpresa", {
-      reset: false, // Permite que la animación se repita al volver a entrar en el viewport
-      distance: "150px", // Ajusta la distancia del desplazamiento
-      duration: 2000, // Ajusta la duración de la animación en milisegundos
-      easing: "ease-in-out", // Ajusta el easing para suavizar el efecto
-      origin: "left", // Ajusta la dirección de origen de la animación
-      interval: 200, // Añade un pequeño retraso entre los elementos
-      delay: 300,
-    });
-    ScrollReveal().reveal(".nuestraMision", {
-      reset: false,
-      distance: "150px",
-      duration: 2000,
-      easing: "ease-in-out",
-      origin: "right",
-      interval: 200,
-      delay: 300,
-    });
-    ScrollReveal().reveal(".valores", {
-      reset: false,
-      distance: "150px",
-      duration: 2000,
-      easing: "ease-in-out",
-      origin: "bottom",
-      interval: 200,
-      delay: 300,
-    });
-  });
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   ScrollReveal().reveal(".laEmpresa", {
+  //     reset: false, // Permite que la animación se repita al volver a entrar en el viewport
+  //     distance: "150px", // Ajusta la distancia del desplazamiento
+  //     duration: 2000, // Ajusta la duración de la animación en milisegundos
+  //     easing: "ease-in-out", // Ajusta el easing para suavizar el efecto
+  //     origin: "left", // Ajusta la dirección de origen de la animación
+  //     interval: 200, // Añade un pequeño retraso entre los elementos
+  //     delay: 300,
+  //   });
+  //   ScrollReveal().reveal(".nuestraMision", {
+  //     reset: false,
+  //     distance: "150px",
+  //     duration: 2000,
+  //     easing: "ease-in-out",
+  //     origin: "right",
+  //     interval: 200,
+  //     delay: 300,
+  //   });
+  //   ScrollReveal().reveal(".valores", {
+  //     reset: false,
+  //     distance: "150px",
+  //     duration: 2000,
+  //     easing: "ease-in-out",
+  //     origin: "bottom",
+  //     interval: 200,
+  //     delay: 300,
+  //   });
+  // });
 </script>
