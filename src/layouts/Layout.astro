@@ -3,14 +3,14 @@
 import Logo from "../images/logo.png";
 import Footer from "@/components/Footer.astro";
 import "@/styles/globals.css";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 import Navbar from "../components/Navbar.astro";
 
 interface Props {
   title: string;
 }
 
-const currentLang = Astro.url.pathname.includes('/es') ? 'es' : 'en';
+const currentLang = Astro.url.pathname.includes("/es") ? "es" : "en";
 const { title } = Astro.props;
 ---
 
@@ -28,10 +28,13 @@ const { title } = Astro.props;
   </head>
   <body class="flex flex-col min-h-[100vh]">
     <!-- <Navbar client:only="react" /> -->
-    <Navbar lang={currentLang}/>
+    <Navbar lang={currentLang} />
     <slot />
-    <Footer lang={currentLang}/>
-    <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <Footer lang={currentLang} />
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"
+    ></script>
   </body>
 </html>
 
@@ -50,6 +53,9 @@ const { title } = Astro.props;
     font-family: system-ui, sans-serif;
     background-size: 224px;
   }
+  body {
+    overflow-x: hidden;
+  }
   code {
     font-family:
       Menlo,
@@ -62,11 +68,17 @@ const { title } = Astro.props;
       monospace;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 
   .link-styles {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   }
 </style>
