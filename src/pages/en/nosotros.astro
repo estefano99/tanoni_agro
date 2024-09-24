@@ -6,8 +6,8 @@ import Empresa from "../../images/empresa.jpg";
 import "@/styles/globals.css";
 ---
 
-<Layout title="Tanoni Agro - Nosotros">
-  <section class="flex flex-col gap-10 md:gap-0" transition:animate="slide">
+<Layout title="Tanoni Agro - About us">
+  <section class="flex flex-col gap-10 md:gap-0">
     <div class="w-full h-[100px] flex items-center justify-center">
       <div class="w-4/5 flex justify-center items-center">
         <h2 class="text-2xl font-bold text-gray-700">About us</h2>
@@ -139,25 +139,25 @@ import "@/styles/globals.css";
     ScrollReveal().reveal(".laEmpresa", {
       reset: false, // Permite que la animación se repita al volver a entrar en el viewport
       distance: "50px", // Ajusta la distancia del desplazamiento
-      duration: 2000, // Ajusta la duración de la animación en milisegundos
+      duration: 1500, // Ajusta la duración de la animación en milisegundos
       easing: "ease-in-out", // Ajusta el easing para suavizar el efecto
-      origin: "left", // Ajusta la dirección de origen de la animación
+      origin: "bottom", // Ajusta la dirección de origen de la animación
       interval: 200, // Añade un pequeño retraso entre los elementos
       delay: 300,
     });
     ScrollReveal().reveal(".nuestraMision", {
       reset: false,
       distance: "50px",
-      duration: 2000,
+      duration: 1500,
       easing: "ease-in-out",
-      origin: "right",
+      origin: "bottom",
       interval: 200,
       delay: 300,
     });
     ScrollReveal().reveal(".valores", {
       reset: false,
       distance: "50px",
-      duration: 2000,
+      duration: 1500,
       easing: "ease-in-out",
       origin: "bottom",
       interval: 200,
