@@ -16,10 +16,10 @@ export default {
       backgroundImage: {
         "negociaciones-image": "url('/src/images/negociaciones.jpg')",
       },
-      colors:{
-        textDarkGray: "#212A37"
-      }
+      colors: {
+        textDarkGray: "#212A37",
+      },
     },
   },
-  plugins: [require('flowbite/plugin')],
+  plugins: [require("flowbite/plugin"), require("@tailwindcss/typography")],
 };

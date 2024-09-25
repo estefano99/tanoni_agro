@@ -23,11 +23,9 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href={Logo.src} />
     <script src="https://unpkg.com/scrollreveal" is:inline defer></script>
     <meta name="generator" content={Astro.generator} />
-    <!-- <ViewTransitions /> -->
     <title>{title}</title>
   </head>
   <body class="flex flex-col min-h-[100vh]">
-    <!-- <Navbar client:only="react" /> -->
     <Navbar lang={currentLang} />
     <slot />
     <Footer lang={currentLang} />
