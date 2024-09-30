@@ -16,9 +16,9 @@ const cardSubProductos = {
   description:
     "Además de los cereales, en Tanoni Agro SRL también gestionamos una amplia gama de subproductos agrícolas, incluyendo harinas, pellets y aceites vegetales. Nuestros servicios aseguran la calidad y confiabilidad de cada transacción, ya que colaboramos con proveedores y clientes de confianza. Nos encargamos de todo el proceso logístico, desde el origen hasta la entrega, para que usted pueda enfocarse en lo que realmente importa: el crecimiento de su negocio.",
   items: [
-    "Diversidad de subproductos agrícolas",
+    "Variedad de subproductos agrícolas",
     "Compromiso con la calidad",
-    "Logística integral y eficiente",
+    "Logística integral y eficiente",
   ],
 };
 
@@ -30,8 +30,23 @@ const cardGranizo = {
   items: [
     "Cobertura completa contra daños por granizo",
     "Asociación con aseguradoras líderes",
-    "Asesoramiento personalizado para elegir la mejor póliza",
+    "Asesoramiento personalizado para elegir la mejor póliza",
   ],
 };
 
-export { cardCereales, cardSubProductos, cardGranizo };
+const carruselCorretaje = {
+  description: "En Tanoni Agro SRL conectamos productores y compradores, garantizando transparencia y seguridad en un mercado competitivo.",
+  alt: "Descripcion de Corretaje de Cereales en Carrusel"
+}
+
+const carruselSubProdYAceites = {
+  description: "Soluciones confiables en la gestión de harinas, pellets y aceites vegetales, asegurando calidad y eficiencia en cada transacción.",
+  alt: "Descripcion de Subproductos y Aceites en Carrusel"
+}
+
+const carruselSegurosGranizo = {
+  description: "Protegemos su inversión agrícola contra los imprevistos del clima. Con nuestros seguros de granizo personalizados, su cosecha estará siempre protegida.",
+  alt: "Descripcion de Seguros de Granizo en Carrusel"
+}
+
+export { cardCereales, cardSubProductos, cardGranizo, carruselCorretaje, carruselSubProdYAceites, carruselSegurosGranizo };

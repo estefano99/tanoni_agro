@@ -34,4 +34,19 @@ const cardGranizo = {
   ],
 };
 
-export { cardCereales, cardSubProductos, cardGranizo };
+const carruselCorretaje = {
+  description: "At Tanoni Agro SRL, we connect producers and buyers, ensuring transparency and security in a competitive market.",
+  alt: "Description of Cereal Brokerage in Carousel"
+}
+
+const carruselSubProdYAceites = {
+  description: "Reliable solutions in managing flours, pellets, and vegetable oils, ensuring quality and efficiency in every transaction.",
+  alt: "Description of By-products and Oils in Carousel"
+}
+
+const carruselSegurosGranizo = {
+  description: "We protect your agricultural investment against unpredictable weather. With our personalized hail insurance, your harvest will always be protected.",
+  alt: "Description of Hail Insurance in Carousel"
+}
+
+export { cardCereales, cardSubProductos, cardGranizo, carruselCorretaje, carruselSubProdYAceites, carruselSegurosGranizo };

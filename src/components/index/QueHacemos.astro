@@ -5,15 +5,15 @@ import subproductos from "../../images/subproductos.png";
 import segurosgranizo from "../../images/segurosgranizo.png";
 ---
 
-<section class="w-full pt-24 min-h-[550px] bg-zinc-200 md:clip-path-quehacemos-wave">
-  <div class="quehacemosReveal flex flex-col justify-evenly">
-    <div class="w-full flex justify-center mb-5">
-      <h2 class="text-clamp-md font-semibold text-gray-600">Qué hacemos</h2>
+<section class="w-full pt-24 min-h-[550px] bg-zinc-100 clip-path-quehacemos-wave">
+  <div class="flex flex-col justify-evenly">
+    <div class="w-full flex justify-center py-9 pt-11">
+      <h2 class="prose text-clamp-md font-semibold text-gray-600 lato-normal">Con que trabajamos</h2>
     </div>
     <div class="flex flex-col justify-evenly items-center md:flex-row gap-6 md:gap-0">
-      <Card imagen={cereales} descripcion="CEREALES"/>
-      <Card imagen={subproductos} descripcion="SUBPRODUCTOS / ACEITES"/>
-      <Card imagen={segurosgranizo} descripcion="SEGUROS DE GRANIZO"/>
+      <Card imagen={cereales} descripcion="CEREALES" cardClass="card-cereales"/>
+      <Card imagen={subproductos} descripcion="SUBPRODUCTOS / ACEITES" cardClass="card-subproductos"/>
+      <Card imagen={segurosgranizo} descripcion="SEGUROS DE GRANIZO" cardClass="card-seguros"/>
     </div>
     <div class="w-full py-6 flex justify-center">
       <a href="/es/quehacemos" class="transition-all hover:scale-105 text-clamp-xs mt-2 sm:w-1/3 md:w-1/6 justify-center inline-flex items-center text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg px-5 py-2.5 text-center me-2 mb-2 cursor-pointer">
@@ -28,13 +28,32 @@ import segurosgranizo from "../../images/segurosgranizo.png";
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
-    ScrollReveal().reveal(".quehacemosReveal", {
-      reset: true,
+    ScrollReveal().reveal(".card-cereales", {
+      reset: false,
       scale: 0.85,
       duration: 1500, // Ajusta la duración de la animación en milisegundos
       easing: "ease-in-out", // Ajusta el easing para suavizar el efecto
-      interval: 500, // Añade un pequeño retraso entre los elementos
-      delay: 300,
+      delay: 200,
+      origin: 'bottom',
+      distance: '100px'
+    });
+
+    ScrollReveal().reveal(".card-subproductos", {
+      reset: false,
+      scale: 0.85,
+      duration: 1500, // Ajusta la duración de la animación en milisegundos
+      easing: "ease-in-out", // Ajusta el easing para suavizar el efecto
+      delay: 400,
+      origin: 'bottom',
+      distance: '100px'
+    });
+
+    ScrollReveal().reveal(".card-seguros", {
+      reset: false,
+      scale: 0.85,
+      duration: 1500, // Ajusta la duración de la animación en milisegundos
+      easing: "ease-in-out", // Ajusta el easing para suavizar el efecto
+      delay: 600,
       origin: 'bottom',
       distance: '100px'
     });

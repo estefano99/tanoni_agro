@@ -10,7 +10,7 @@ import { Image } from "astro:assets";
   <section class="flex flex-col gap-10 md:gap-0" transition:animate="slide">
     <div class="w-full h-[100px] flex items-center justify-center">
       <div class="w-4/5 flex justify-center items-center">
-        <h2 class="text-2xl font-bold text-gray-700">NOSOTROS</h2>
+        <h2 class="prose prose-neutral prose-base md:prose-2xl text-2xl font-bold text-gray-700 lato-normal">NOSOTROS</h2>
         <hr class="flex-grow border-t border-gray-300 ml-4" />
       </div>
     </div>
@@ -22,10 +22,10 @@ import { Image } from "astro:assets";
         class="w-full md:w-[60%] h-full flex flex-col md:items-center ml-5 md:ml-0"
       >
         <div class="w-[90%] md:w-[60%] flex flex-col gap-5">
-          <h2 class="laEmpresa text-2xl md:text-6xl font-semibold opacity-80">
+          <h2 class="prose prose-neutral prose-base md:prose-2xl laEmpresa text-2xl md:text-6xl font-semibold opacity-80 lato-italic">
             La empresa
           </h2>
-          <p class="laEmpresa">
+          <p class="laEmpresa prose prose-neutral prose-base md:prose-lg">
             <span class="font-bold">Tanoni Agro SRL</span> es una empresa familiar
             enfocada en el corretaje de cereales, aceites, subproductos y servicios
             relacionados en el mercado argentino. Desde nuestra fundación, nos hemos
@@ -66,14 +66,13 @@ import { Image } from "astro:assets";
         <div
           class="w-[90%] md:w-4/5 flex flex-col justify-center items-start gap-5"
         >
-          <h2 class="nuestraMision text-xl md:text-4xl font-semibold opacity-80">
+        <h2 class="prose prose-neutral prose-base md:prose-2xl nuestraMision text-xl md:text-4xl font-semibold opacity-80 lato-italic">
             Nuestra Misión
           </h2>
-          <p class="nuestraMision">
-            Especializarnos en <span class="font-bold"
+          <p class="nuestraMision prose prose-neutral prose-base md:prose-lg">
+            Especializarnos en <span class="font-semibold"
               >facilitar las transacciones comerciales entre productores y
-              compradores
-            </span>, asegurando la máxima transparencia y eficacia en cada
+              compradores</span>, asegurando la máxima transparencia y eficacia en cada
             operación. Ofrecer asesoramiento experto y servicios de gestión de
             riesgos, optimización de la cadena de suministro y acceso a mercados
             internacionales.
@@ -85,47 +84,47 @@ import { Image } from "astro:assets";
     <!-- Tercer article -->
 
     <article
-      class="min-h-[500px] md:h-[500px] w-full flex flex-col md:flex-row justify-center items-center gap-5 bg-slate-50"
+      class="min-h-[500px] md:h-[500px] w-full flex flex-col md:flex-row justify-center items-center gap-5 bg-slate-50 select-none"
     >
       <div
-        class="valores h-1/2 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        class="valores min-h-[65%] block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 transition-all"
       >
         <h5
-          class="valores mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+          class="prose prose-neutral prose-base md:prose-2xl mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white lato-normal"
         >
           Propósito
         </h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400">
-          Construir <span class="font-bold">relaciones a largo plazo</span> con nuestros
+        <p class="font-normal text-gray-700 dark:text-gray-400 prose prose-neutral prose-base md:prose-lg">
+          Construir <span class="font-semibold">relaciones a largo plazo</span> con nuestros
           clientes, basadas en la confianza y el compromiso mutuo. Nos enorgullece
           ser un socio estratégico para aquellos que buscan maximizar el valor de
           sus operaciones en el sector agroindustrial.
         </p>
       </div>
       <div
-        class="valores block h-1/2 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        class="valores block min-h-[65%] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 transition-all"
       >
         <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+          class="prose prose-neutral prose-base md:prose-2xl mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white lato-normal"
         >
           Valores
         </h5>
         <p
-          class="font-normal underline underline-offset-2 text-gray-700 dark:text-gray-400"
+          class="font-normal underline underline-offset-2 text-gray-700 dark:text-gray-400 prose prose-neutral prose-base md:prose-lg"
         >
-          Confiabilidad, transparencia, trayectoria familiar.
+          Confiabilidad, transparencia y trayectoria familiar.
         </p>
       </div>
       <div
-        class="valores block h-1/2 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        class="valores block min-h-[65%] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 transition-all"
       >
         <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+          class="prose prose-neutral prose-base md:prose-2xl mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white lato-normal"
         >
           Equipo
         </h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400">
-          Ponemos a disposición un <span class="font-bold"
+        <p class="font-normal text-gray-700 dark:text-gray-400 prose prose-neutral prose-base md:prose-lg">
+          Ponemos a disposición un <span class="font-semibold"
             >equipo de profesionales altamente capacitados</span
           >, con una amplia experiencia y conocimiento en el sector, lo que nos
           permite brindar un servicio eficiente, confiable y adaptado a las

@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
-const { imagen, descripcion } = Astro.props;
+const { imagen, descripcion, cardClass } = Astro.props;
 ---
 
 <div
-  class="divCard flex flex-col items-center w-11/12 md:w-1/4 rounded-xl overflow-hidden gap-5 pb-4 cursor-pointer select-none hover:scale-105 transition-all hover:brightness-110 hover:shadow-xl"
+  class=`${cardClass} divCard flex flex-col items-center w-11/12 md:w-1/4 rounded-xl overflow-hidden gap-5 pb-4 cursor-pointer select-none md:hover:scale-105 transition-all md:hover:brightness-125`
 >
-  <Image src={imagen} alt="tractor" />
-  <p class="w-full break-words p-2 text-clamp-xs font-semibold text-center">{descripcion}</p>
+  <Image src={imagen} alt={descripcion} />
+  <p class="prose prose-base w-full break-words p-2 text-clamp-xs font-semibold text-center">{descripcion}</p>
 </div>
 
 <script>
@@ -16,7 +16,7 @@ const path = window.location.pathname;
 
 divCard.forEach(card => {
   card.addEventListener("click", () => {
-    if (path.includes("/es/")) return window.location.href = "/es/quehacemos/";
+    if (path.includes("/es/")) return window.location.href = "/es/quehacemos";
     return window.location.href = "/en/quehacemos/";
   })
 })
