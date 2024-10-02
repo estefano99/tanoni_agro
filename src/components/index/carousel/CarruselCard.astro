@@ -4,23 +4,23 @@ import { Image } from "astro:assets";
 const { src, alt, description } = Astro.props
 ---
 
-<div class="carousel-item hidden duration-700 ease-in-out" data-carousel-item>
+<div class="carousel-item hidden duration-700 ease-in-out overflow-hidden" data-carousel-item>
   <Image
     src={src}
-    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+    class="absolute block w-full h-full object-cover object-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
     alt={alt}
   />
   
   <div class="absolute inset-0 bg-black/50"></div>
   
-  <div id="texto-carrusel" class="z-50 w-full absolute bottom-10 left-0 bg-black/40 text-white p-4">
-    <p class="w-full prose-2xl text-white">{description}</p>
+  <div id="texto-carrusel" class="z-50 w-full absolute bottom-5 left-0 p-4 text-white text-center md:text-left">
+    <p class="w-full text-sm md:text-xl lg:text-2xl leading-snug md:leading-relaxed lg:leading-loose">{description}</p>
   </div>
 </div>
 
 <style>
   #texto-carrusel {
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(1px);
     box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
   }
 </style>
