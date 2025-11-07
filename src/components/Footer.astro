@@ -7,103 +7,99 @@ const { lang } = Astro.props;
 ---
 
 <footer class="bg-white dark:bg-gray-900">
-  <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-    <div class="md:flex md:justify-between">
-      <div class="mb-6 md:mb-0">
-        <a href="/" class="flex items-center">
-          <Image src={Logo} class="h-8 w-8 me-3" alt="Tanoni Agro Logo" />
-          <span
-            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-            >Tanoni Agro
-          </span
-          >
-        </a>
+  <div class="mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
+    <div class="md:flex md:justify-around">
+      <div class="mb-6 md:mb-0 flex items-center gap-3">
+        <Image src={Logo} class="h-8 w-8" alt="Tanoni Agro Logo" />
+        <span class="text-2xl font-semibold dark:text-white">Tanoni Agro</span>
       </div>
-      <div class="grid grid-cols-1 gap-8 sm:gap-6 sm:grid-cols-3">
-        <div>
-          <h2
-            class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
-          >
-            {lang === "es" ? "Email" : "Email"}
-          </h2>
-          <ul class="text-gray-500 dark:text-gray-400 font-medium">
-            <li class="mb-4">
-              <a
-                href="mailto:jose.castro@tanoniagro.com.ar"
-                target="_blank"
-                class="hover:underline flex gap-1"><Mail /> jose.castro@tanoniagro.com.ar</a
-              >
-            </li>
-            <li>
-              <a
-                href="mailto:carola.tanoni@tanoniagro.com.ar"
-                target="_blank"
-                class="hover:underline flex gap-1"><Mail /> carola.tanoni@tanoniagro.com.ar</a
-              >
-            </li>
-          </ul>
+
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+        <!-- Responsable General -->
+        <div class="space-y-1">
+          <h3 class="text-sm font-semibold text-gray-900 uppercase dark:text-white mb-4">
+            {lang === "es" ? "Responsable General" : "General Manager"}
+          </h3>
+          <p class="text-gray-500 dark:text-gray-400 font-medium">Monica Scarpeccio</p>
+          <a href="mailto:monica.scarpeccio@tanoniagro.com.ar" class="flex gap-2 hover:underline text-gray-500 dark:text-gray-400">
+            <Mail /> monica.scarpeccio@tanoniagro.com.ar
+          </a>
+          <a href="https://wa.me/5493416468744" target="_blank" class="flex gap-2 hover:underline text-gray-500 dark:text-gray-400">
+            <MessageCircleMore /> +54 9 341 6468744
+          </a>
         </div>
-        <div class="md:w-1/2">
-          <h2
-            class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
-          >
-          {lang === "es" ? "Telefono" : "Phone"}
-          </h2>
-          <ul class="text-gray-500 dark:text-gray-400 font-medium">
-            <li class="mb-4">
-              <a href="tel:3465514444" class="hover:underline flex gap-1"
-                ><Phone /> 3465514444
-              </a
-              >
-            </li>
-            <li>
-              <a href="tel:3465409977" class="hover:underline flex gap-1"
-                ><Phone /> 3465409977
-              </a
-              >
-            </li>
-          </ul>
+
+        <!-- Comercial Granos y Subproductos -->
+        <div class="space-y-1">
+          <h3 class="text-sm font-semibold text-gray-900 uppercase dark:text-white mb-4">
+            {lang === "es" ? "Comercial Granos y Subproductos" : "Grains and Byproducts Sales"}
+          </h3>
+          <p class="text-gray-500 dark:text-gray-400 font-medium">Juan Pablo Monti</p>
+          <a href="mailto:juan.monti@tanoniagro.com.ar" class="flex gap-2 hover:underline text-gray-500 dark:text-gray-400">
+            <Mail /> juan.monti@tanoniagro.com.ar
+          </a>
+          <a href="https://wa.me/5493415073762" target="_blank" class="flex gap-2 hover:underline text-gray-500 dark:text-gray-400">
+            <MessageCircleMore /> +54 9 341 5073762
+          </a>
         </div>
-        <div>
-          <h2
-            class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
-          >
-            Whatsapp
-          </h2>
-          <ul class="text-gray-500 dark:text-gray-400 font-medium">
-            <li class="mb-4">
-              <a
-                href="https://wa.me/3465514444"
-                target="_blank"
-                class="hover:underline flex gap-1"><MessageCircleMore /> JOSE MARIA CASTRO</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://wa.me/3465409977"
-                target="_blank"
-                class="hover:underline flex gap-1"><MessageCircleMore />CAROLA TANONI</a
-              >
-            </li>
-          </ul>
+
+        <!-- Comercial Aceites -->
+        <div class="space-y-1">
+          <h3 class="text-sm font-semibold text-gray-900 uppercase dark:text-white mb-4">
+            {lang === "es" ? "Comercial Aceites" : "Oils Sales"}
+          </h3>
+          <p class="text-gray-500 dark:text-gray-400 font-medium">Carola Tanoni</p>
+          <a href="mailto:carola.tanoni@tanoniagro.com.ar" class="flex gap-2 hover:underline text-gray-500 dark:text-gray-400">
+            <Mail /> carola.tanoni@tanoniagro.com.ar
+          </a>
+          <a href="https://wa.me/5493465409977" target="_blank" class="flex gap-2 hover:underline text-gray-500 dark:text-gray-400">
+            <MessageCircleMore /> +54 9 3465 409977
+          </a>
         </div>
+
+        <!-- Comercial Granos en Campo -->
+        <div class="space-y-1">
+          <h3 class="text-sm font-semibold text-gray-900 uppercase dark:text-white mb-4">
+            {lang === "es" ? "Comercial Granos en Campo" : "Field Grains Sales"}
+          </h3>
+          <p class="text-gray-500 dark:text-gray-400 font-medium">Nicolas Pasetti</p>
+          <a href="mailto:nicolas.pasetti@tanoniagro.com.ar" class="flex gap-2 hover:underline text-gray-500 dark:text-gray-400">
+            <Mail /> nicolas.pasetti@tanoniagro.com.ar
+          </a>
+          <a href="https://wa.me/5493468587029" target="_blank" class="flex gap-2 hover:underline text-gray-500 dark:text-gray-400">
+            <MessageCircleMore /> +54 9 3468 587029
+          </a>
+        </div>
+
+        <!-- Administración y Logística -->
+        <div class="space-y-1">
+          <h3 class="text-sm font-semibold text-gray-900 uppercase dark:text-white mb-4">
+            {lang === "es" ? "Administración y Logística" : "Administration and Logistics"}
+          </h3>
+          <p class="text-gray-500 dark:text-gray-400 font-medium">Adrian Vazquez</p>
+          <a href="mailto:adrian.vazquez@tanoniagro.com.ar" class="flex gap-2 hover:underline text-gray-500 dark:text-gray-400">
+            <Mail /> adrian.vazquez@tanoniagro.com.ar
+          </a>
+          <a href="https://wa.me/5493417194513" target="_blank" class="flex gap-2 hover:underline text-gray-500 dark:text-gray-400">
+            <MessageCircleMore /> +54 9 341 7194513
+          </a>
+        </div>
+
       </div>
     </div>
-    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-    <div class="sm:flex sm:items-center sm:justify-between">
-      <span
-        class="text-sm text-gray-500 sm:text-center dark:text-gray-400 spanFechaActual"
-      >
-      </span>
+
+    <hr class="my-6 border-gray-200 dark:border-gray-700 lg:my-8" />
+    <div class="text-center">
+      <span class="text-sm text-gray-500 dark:text-gray-400 spanFechaActual"></span>
     </div>
-  </div> 
+  </div>
 </footer>
 
 <script is:inline>
   const fechaActual = new Date().getFullYear();
   const spanFechaActual = document.querySelector(".spanFechaActual");
-
   document.addEventListener("DOMContentLoaded", () => {
-    spanFechaActual.textContent = `© ${fechaActual} Stark Two. Todos los Derechos Reservados.`;
+    spanFechaActual.textContent = `© ${fechaActual} Tanoni Agro. Todos los derechos reservados.`;
   });
 </script>
