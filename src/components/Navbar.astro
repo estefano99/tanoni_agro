@@ -1,8 +1,15 @@
 ---
 import logo from "../images/logo.png";
-const { lang } = Astro.props;
 
-const navLinks = {
+type Lang = "en" | "es";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "es" } = Astro.props;
+
+const navLinks: Record<Lang, { name: string; path: string }[]> = {
   en: [
     { name: "Home", path: "/en/" },
     { name: "Who we are", path: "/en/nosotros/" },
@@ -18,11 +25,11 @@ const navLinks = {
 };
 
 // Obtener los enlaces correspondientes al idioma actual
-const links = navLinks[lang] || "es";
+const links = navLinks[lang];
 ---
 
 <header class="fixed inset-x-0 top-0 z-50 bg-transparent navbarReveal">
-  <nav class="bg-white md:bg-transparent">
+  <nav class="bg-white lg:bg-transparent">
     <div
       class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
     >
@@ -35,7 +42,7 @@ const links = navLinks[lang] || "es";
         </span>
       </a>
       <div
-        class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse"
+        class="flex items-center lg:order-2 space-x-1 lg:space-x-0 rtl:space-x-reverse"
       >
         <button
           type="button"
@@ -126,7 +133,7 @@ const links = navLinks[lang] || "es";
         <button
           data-collapse-toggle="navbar-language"
           type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-language"
           aria-expanded="false"
         >
@@ -148,18 +155,18 @@ const links = navLinks[lang] || "es";
         </button>
       </div>
       <div
-        class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+        class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
         id="navbar-language"
       >
         <ul
-          class="flex text-lg flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
+          class="flex text-lg flex-col font-medium p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg lg:items-center lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0"
         >
           {
             links.map((link) => (
               <li>
                 <a
                   href={link.path}
-                  class="block py-2 px-3 md:p-0 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-400 transition-all"
+                  class="block py-2 px-3 lg:p-0 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-gray-400 transition-all"
                   aria-current="page"
                 >
                   {link.name}
@@ -167,6 +174,16 @@ const links = navLinks[lang] || "es";
               </li>
             ))
           }
+          <li>
+            <a
+              href="https://portal.tanoniagro.com.ar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-2 inline-flex w-full items-center justify-center rounded-md border border-emerald-700/40 px-3 py-2 text-base font-semibold text-emerald-800 transition-colors hover:bg-emerald-50 hover:text-emerald-900 lg:mt-0 lg:w-auto lg:px-3 lg:py-1.5 lg:text-sm lg:text-inherit lg:hover:bg-white/15 lg:hover:text-inherit"
+            >
+              {lang === "es" ? "Portal Clientes" : "Customer Portal"}
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -175,26 +192,35 @@ const links = navLinks[lang] || "es";
 
 <script>
   import { btnES, btnEn } from "@/lib/constantes";
-  const btnRenderizado = document.querySelector(".btnRenderizado");
-  const header = document.querySelector("header");
+
+  type Language = "es" | "en";
+
+  const btnRenderizado = document.querySelector<HTMLButtonElement>(".btnRenderizado");
+
+  const isLanguage = (language: string | null): language is Language => language === "es" || language === "en";
 
   // Obtener el idioma actual desde la URL
-  const getCurrentLanguageFromUrl = () => {
+  const getCurrentLanguageFromUrl = (): Language => {
     const currentPath = window.location.pathname;
     // Detectar si estamos en la ruta /es/ o /en/
-    const match = currentPath.match(/\/(es|en)\//);
-    return match ? match[1] : "es"; // Si no se encuentra, por defecto será 'es'
+    const match = (currentPath.match(/\/(es|en)\//) ?? ["", "es"]) as [
+      string,
+      Language,
+    ];
+    return isLanguage(match?.[1] ?? null) ? match[1] : "es"; // Si no se encuentra, por defecto será 'es'
   };
 
   // Función para cambiar el contenido del botón
-  const updateButtonLanguage = (selectedLanguage) => {
+  const updateButtonLanguage = (selectedLanguage: Language) => {
+    if (!btnRenderizado) return;
+
     selectedLanguage === "es"
       ? (btnRenderizado.innerHTML = btnES)
       : (btnRenderizado.innerHTML = btnEn);
   };
 
   // Función para redirigir a la nueva URL si es necesario
-  const redirectToNewLanguage = (selectedLanguage) => {
+  const redirectToNewLanguage = (selectedLanguage: Language) => {
     const currentPath = window.location.pathname;
     const currentLanguage = getCurrentLanguageFromUrl();
 
@@ -220,6 +246,8 @@ const links = navLinks[lang] || "es";
       option.addEventListener("click", () => {
         const selectedLanguage = option.getAttribute("data-language");
 
+        if (!isLanguage(selectedLanguage)) return;
+
         // Actualizar el contenido del botón
         updateButtonLanguage(selectedLanguage);
 
@@ -231,10 +259,12 @@ const links = navLinks[lang] || "es";
     const navbar = document.querySelector(".navbarReveal");
     const path = window.location.pathname;
 
+    if (!navbar || !btnRenderizado) return;
+
     if (path === "/es/" || path === "/en/") {
       // Si el path es exactamente "/es" o "/en", se aplican estas clases
-      navbar.classList.add("md:text-white", "text-black");
-      btnRenderizado.classList.add("md:text-white", "text-black", "bg-slate-600/30");
+      navbar.classList.add("lg:text-white", "text-black");
+      btnRenderizado.classList.add("lg:text-white", "text-black", "bg-slate-600/30");
     } else {
       navbar.classList.add("sticky", "text-black", "bg-slate-200");
       btnRenderizado.classList.add("bg-slate-600/40");
